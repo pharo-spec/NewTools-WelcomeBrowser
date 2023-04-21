@@ -84,20 +84,21 @@ StWelcomeBrowser >> helpContent [
 
 Pharo has a vibrant community that shares knowledge in different ways: 
 
-- The Pharo Users mailing list: [http://lists.pharo.org/mailman/listinfo/pharo-users_lists.pharo.org](http://lists.pharo.org/mailman/listinfo/pharo-users_lists.pharo.org)
+- The Pharo Users mailing list: [https://lists.pharo.org/list/pharo-users.lists.pharo.org](https://lists.pharo.org/list/pharo-users.lists.pharo.org)
 - The Pharo Discord server: [https://discord.gg/QewZMZa](https://discord.gg/QewZMZa)
 
 You can find more information, lists to browse/suscribe and places to share code at: 
 
 [http://pharo.org/community](http://pharo.org/community)
 
-## Using ProfStef 
+## Using ProfStef
 
 You can learn Pharo by clicking on the following expression: 
 
 ```pharoeval
 ProfStef go.
 ```
+  
 ## Follow the MOOC
 
 Pharo has an excellent MOOC (Massive Open Online Course). You can find more information here: 
@@ -117,7 +118,6 @@ You can find the book here:
 
 - [https://github.com/SquareBracketAssociates/UpdatedPharoByExample](https://github.com/SquareBracketAssociates/UpdatedPharoByExample)
 - [https://github.com/SquareBracketAssociates/PharoByExample80](https://github.com/SquareBracketAssociates/PharoByExample80)
-
 ## Help
 
 A compendium of Pharo documentation can be found at: 
@@ -177,14 +177,24 @@ StWelcomeBrowser >> setupContent [
 
 	^ '# Quick setup
 
-Choose your preferred color theme: 
-- `PharoLightTheme beCurrent` or `PharoDarkTheme beCurrent` 
-- and  switch fullscreen mode executing  `Display toggleFullscreen`
-
-Click if you have access to a: regular network connection or slow network
-or if need to setup a network proxy.
-
-You can also apply many other other settings by opening the `SettingBrowser open`.'
+Choose your preferred color theme by clicking one of the following:
+```pharoeval
+PharoLightTheme beCurrent
+``` 
+```pharoeval
+PharoDarkTheme beCurrent
+```
+ 
+Switch fullscreen mode executing 
+```pharoeval
+Display toggleFullscreen
+```
+  
+You can also apply many other other settings by opening the SettingBrowser: 
+```pharoeval
+SettingBrowser open
+```
+'
 ]
 
 { #category : #'accessing - labels' }

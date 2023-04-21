@@ -11,7 +11,7 @@ BaselineOfWelcomeBrowser >> baseline: spec [
 	spec for: #'common' do: [
 		self documentBrowser: spec.
 		spec 
-			package: 'WelcomeBrowser' 
+			package: 'NewTools-WelcomeBrowser' 
 			with: [ spec requires: 'NewToolsDocumentBrowse' ] ]
 ]
 

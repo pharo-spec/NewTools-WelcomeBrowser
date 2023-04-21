@@ -18,6 +18,18 @@ Class {
 	#category : #WelcomeBrowser
 }
 
+{ #category : #'world menu' }
+StWelcomeBrowser class >> menuCommandOn: aBuilder [
+	<worldMenu>
+
+	(aBuilder item: #'Welcome to Pharo')
+		parent: #PharoHelp;
+		order: 1;
+		action: [ self open ];
+		icon: ((self iconNamed: #pharoIcon) scaledToSize: 16@16);
+		help: 'Welcome window for Pharo'
+]
+
 { #category : #'instance creation' }
 StWelcomeBrowser class >> open [
 	<script>

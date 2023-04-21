@@ -98,7 +98,7 @@ Pharo has an excellent MOOC (Massive Open Online Course). You can find more info
 
 [http://mooc.pharo.org](http://mooc.pharo.org)
 
-Check the testimonies they are great and fun. 
+Check the testimonies: they are great and fun. 
 
 ## Books
 
@@ -181,10 +181,7 @@ StWelcomeBrowser >> updatePresenter [
 { #category : #private }
 StWelcomeBrowser >> version [
 
-	^ '{1}.{2}' format: { 
-		SystemVersion current major.
-		SystemVersion current minor
-	}
+	^ '11'
 ]
 
 { #category : #'accessing - contents' }

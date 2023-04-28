@@ -13,7 +13,9 @@ Class {
 		'moreDocumentationPanel',
 		'welcomePanel',
 		'topicsList',
-		'contentPanel'
+		'contentPanel',
+		'millerList',
+		'paginator'
 	],
 	#category : #'NewTools-WelcomeBrowser'
 }
@@ -43,6 +45,13 @@ StWelcomeBrowser class >> open [
 	self new open
 ]
 
+{ #category : #private }
+StWelcomeBrowser >> addPresenter: aPresenter [
+
+	millerList addPresenter: aPresenter.
+	paginator addPage: aPresenter
+]
+
 { #category : #'accessing - contents' }
 StWelcomeBrowser >> changesContent [
 
@@ -58,20 +67,18 @@ StWelcomeBrowser >> changesLabel [
 { #category : #initialization }
 StWelcomeBrowser >> connectPresenters [
 
-	topicsList transmitDo: [ :aTopic |
-		self select: aTopic ]
 ]
 
 { #category : #layout }
 StWelcomeBrowser >> defaultLayout [
 
-	^ SpBoxLayout newTopToBottom 
-		borderWidth: 5;
-		add: (SpPanedLayout newLeftToRight
-			positionOfSlider: 30 percent;
-			add: topicsList;
-			add: contentPanel;
-			yourself);
+	^ SpBoxLayout newTopToBottom
+		add: millerList;
+		add: (SpBoxLayout newLeftToRight 
+				hAlignCenter;
+				add: paginator;
+				yourself) 
+			expand: false;
 		yourself
 ]
 
@@ -139,13 +146,17 @@ StWelcomeBrowser >> helpLabel [
 { #category : #initialization }
 StWelcomeBrowser >> initializePresenters [
 
-	topicsList := self newList.
-	topicsList 
-		items: self topics;
-		display: [ :aTopic | aTopic key ];
-		displayIcon: [ :aTopic | (self iconNamed: #glamorousBookmark) ].
+	self addStyle: 'welcome'.
 
-	contentPanel := self instantiate: MicrodownPresenter
+	millerList := self instantiate: SpMillerColumnPresenter.
+	millerList  
+		withoutHorizontalScrollBar;
+		visiblePages: 1;
+		spacing: 5.
+		
+	paginator := SpPaginatorPresenter new.
+	paginator visiblePages: 1.
+	paginator chainTo: millerList
 ]
 
 { #category : #initialization }
@@ -153,8 +164,48 @@ StWelcomeBrowser >> initializeWindow: aWindowPresenter [
 
 	aWindowPresenter
 		title: 'Welcome';
-		initialExtent: 800@550;
+		initialExtent: 700@550;
+		bindKeyCombination: Character arrowRight asKeyCombination toAction: [ self selectNext ]; 
+		bindKeyCombination: Character arrowLeft asKeyCombination toAction: [ self selectPrevious ]; 
 		centered
+]
+
+{ #category : #private }
+StWelcomeBrowser >> newContainerTopic [ 
+
+	^ self instantiate: StWelcomeTopicContainerPresenter
+]
+
+{ #category : #private }
+StWelcomeBrowser >> newMicrodownTopic [ 
+
+	^ self instantiate: StWelcomeTopicMicrodownPresenter
+]
+
+{ #category : #initialization }
+StWelcomeBrowser >> newTopicFrom: aTopic [
+
+	^ self 
+		instantiate: StWelcomeTopicPresenter 
+		on: aTopic
+]
+
+{ #category : #private }
+StWelcomeBrowser >> newTopicTitle: aTitle contents: aString [
+	
+	^ self newMicrodownTopic 
+		title: aTitle;
+		contents: aString;
+		yourself
+]
+
+{ #category : #private }
+StWelcomeBrowser >> newTopicTitle: aTitle presenterClass: aClass [
+	
+	^ self newContainerTopic 
+		title: aTitle;
+		contentPresenter: aClass new;
+		yourself
 ]
 
 { #category : #private }
@@ -170,6 +221,25 @@ StWelcomeBrowser >> select: aTopic [
 		documentFromString: aTopic value; 
 		selectionInterval: (1 to: 0)
 	
+]
+
+{ #category : #private }
+StWelcomeBrowser >> selectNext [ 
+
+	self selectPage: paginator selectedPage + 1
+]
+
+{ #category : #private }
+StWelcomeBrowser >> selectPage: aNumber [
+
+	paginator selectPage: aNumber
+]
+
+{ #category : #private }
+StWelcomeBrowser >> selectPrevious [
+
+	paginator selectedPage = 1 ifTrue: [ ^ self ].
+	self selectPage: paginator selectedPage - 1
 ]
 
 { #category : #'accessing - contents' }
@@ -206,18 +276,27 @@ StWelcomeBrowser >> setupLabel [
 { #category : #private }
 StWelcomeBrowser >> topics [
 
-	^ { 
-	self welcomeLabel -> self welcomeContent.
-	self setupLabel -> self setupContent.
-	self helpLabel -> self helpContent. 
-	self changesLabel -> self changesContent. 
+	^ {
+	self newTopicTitle: self welcomeLabel contents: self welcomeContent.
+	self newTopicTitle: self helpLabel presenterClass: StWelcomeSetupPresenter.
+	"self newTopicTitle: self setupLabel contents: self setupContent."
+	self newTopicTitle: self helpLabel contents: self helpContent. 
+	self newTopicTitle: self changesLabel contents: self changesContent. 
 	}
 ]
 
 { #category : #initialization }
 StWelcomeBrowser >> updatePresenter [
+	| topics |
 
-	topicsList selectFirst
+	topics := self topics.
+	topics withIndexDo: [ :each :index |
+		self addPresenter: (each
+			hasPrevious: index > 1 hasNext: index < topics size;
+			whenNextDo: [ self selectNext ];
+			whenPreviousDo: [ self selectPrevious ];
+			yourself) ].
+	self selectPage: 1
 ]
 
 { #category : #private }

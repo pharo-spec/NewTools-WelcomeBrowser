@@ -25,6 +25,12 @@ StWelcomeTopicPresenter >> activate [
 	"
 ]
 
+{ #category : #'api - focus' }
+StWelcomeTopicPresenter >> defaultKeyboardFocus [
+
+	^ contentPresenter
+]
+
 { #category : #layout }
 StWelcomeTopicPresenter >> defaultLayout [
 

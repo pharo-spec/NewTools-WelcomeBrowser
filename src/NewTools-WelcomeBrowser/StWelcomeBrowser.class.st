@@ -226,13 +226,15 @@ StWelcomeBrowser >> select: aTopic [
 { #category : #private }
 StWelcomeBrowser >> selectNext [ 
 
+	(paginator selectedPage = millerList pages size) ifTrue: [ ^ self ].
 	self selectPage: paginator selectedPage + 1
 ]
 
 { #category : #private }
 StWelcomeBrowser >> selectPage: aNumber [
 
-	paginator selectPage: aNumber
+	paginator selectPage: aNumber.
+	(millerList pages at: paginator selectedPage) takeKeyboardFocus
 ]
 
 { #category : #private }

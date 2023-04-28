@@ -124,7 +124,7 @@ StWelcomeSetupPresenter >> selectTheme: aTheme [
 { #category : #initialization }
 StWelcomeSetupPresenter >> settingsContent [
 
-	^ 'You can also apply many other other settings by opening the Settings Browser'
+	^ 'You can also apply many other settings by opening the Settings Browser'
 ]
 
 { #category : #private }

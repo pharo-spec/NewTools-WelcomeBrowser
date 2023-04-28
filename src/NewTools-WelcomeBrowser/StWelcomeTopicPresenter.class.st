@@ -29,6 +29,10 @@ StWelcomeTopicPresenter >> activate [
 StWelcomeTopicPresenter >> defaultLayout [
 
 	^ SpBoxLayout newLeftToRight
+		add: previousPresenter expand: false;
+		add: contentPresenter;
+		add: nextPresenter expand: false;
+		yourself
 ]
 
 { #category : #accessing }
@@ -93,6 +97,8 @@ StWelcomeTopicPresenter >> newNavigationTo: aSymbol do: aBlock [
 			imagePresenter image: ((self imageFor: aSymbol) asGrayScaleWithAlpha).
 			"navigationPresenter removeStyle: 'topicNavigationHover'" ]. 
 	
+	navigationPresenter hide.
+	
 	^ navigationPresenter
 ]
 
@@ -114,15 +120,9 @@ StWelcomeTopicPresenter >> title: aTitle [
 
 { #category : #initialization }
 StWelcomeTopicPresenter >> updatePresenter [
-	| newLayout |
 
-	newLayout := SpBoxLayout newLeftToRight.
-	hasPrevious ifTrue: [ 
-		newLayout add: previousPresenter expand: false ].
-	newLayout add: contentPresenter.
-	hasNext ifTrue: [  
-		newLayout add: nextPresenter expand: false ].
-	self layout: newLayout
+	hasPrevious ifTrue: [ previousPresenter show ].
+	hasNext ifTrue: [ nextPresenter show ]
 ]
 
 { #category : #enumerating }

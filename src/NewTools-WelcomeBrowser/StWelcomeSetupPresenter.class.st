@@ -55,7 +55,8 @@ StWelcomeSetupPresenter >> initializePresenters [
 		whenChangedDo: [ :aBoolean | self toggleFullScreen: aBoolean ].
 	
 	settingsHelpLabel := self newLabel label: self settingsContent.
-	settingsButton := self newButton 
+	settingsButton := self newButton
+		addStyle: 'flat'; 
 		icon: (self iconNamed: #smallConfiguration);
 		label: 'Open';
 		action: [ self openSettingsBrowser ];

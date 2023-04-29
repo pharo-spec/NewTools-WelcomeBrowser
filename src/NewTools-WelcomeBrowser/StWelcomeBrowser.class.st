@@ -85,9 +85,9 @@ StWelcomeBrowser >> defaultLayout [
 { #category : #'accessing - contents' }
 StWelcomeBrowser >> helpContent [
 
-	^ '# To Learn Pharo
-
-## Getting help
+	^ '# Learn Pharo
+  
+### Getting help
 
 Pharo has a vibrant community that shares knowledge in different ways: 
 
@@ -98,15 +98,13 @@ You can find more information, lists to browse/suscribe and places to share code
 
 [http://pharo.org/community](http://pharo.org/community)
 
-## Using ProfStef
-
+### Using ProfStef
 You can learn Pharo by clicking on the following expression: 
 
 ```pharoeval
 ProfStef go.
 ```
-  
-## Follow the MOOC
+### Follow the MOOC
 
 Pharo has an excellent MOOC (Massive Open Online Course). You can find more information here: 
 
@@ -114,7 +112,7 @@ Pharo has an excellent MOOC (Massive Open Online Course). You can find more info
 
 Check the testimonies: they are great and fun. 
 
-## Books
+### Books
 
 There are several free Pharo books that can be download here: 
 
@@ -125,7 +123,7 @@ You can find the book here:
 
 - [https://github.com/SquareBracketAssociates/UpdatedPharoByExample](https://github.com/SquareBracketAssociates/UpdatedPharoByExample)
 - [https://github.com/SquareBracketAssociates/PharoByExample80](https://github.com/SquareBracketAssociates/PharoByExample80)
-## Help
+### Help
 
 A compendium of Pharo documentation can be found at: 
 

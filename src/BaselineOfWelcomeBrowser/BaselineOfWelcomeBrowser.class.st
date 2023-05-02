@@ -11,18 +11,10 @@ BaselineOfWelcomeBrowser >> baseline: spec [
 	spec for: #'common' do: [
 		spec postLoadDoIt: #loadThemeImages.
 		
-		self documentBrowser: spec.
+		self microdown: spec.
 		spec 
 			package: 'NewTools-WelcomeBrowser' 
-			with: [ spec requires: 'NewToolsDocumentBrowse' ] ]
-]
-
-{ #category : #baselines }
-BaselineOfWelcomeBrowser >> documentBrowser: spec [
-		
-	spec 
-		baseline: 'NewToolsDocumentBrowser' 
-		with: [  spec repository: 'github://pharo-spec/NewTools-DocumentBrowser/src' ]
+			with: [ spec requires: 'Microdown' ] ]
 ]
 
 { #category : #postload }
@@ -38,6 +30,15 @@ BaselineOfWelcomeBrowser >> loadThemeImages [
 			location.
 	
 	themeClass loadAllImagesFrom: location / 'resources' / 'themes'
+]
+
+{ #category : #baselines }
+BaselineOfWelcomeBrowser >> microdown: spec [
+
+	spec baseline: 'Microdown' with: [
+		spec
+			repository: 'github://pillar-markup/Microdown:integration/src';
+			loads: #('RichText') ]
 ]
 
 { #category : #postload }

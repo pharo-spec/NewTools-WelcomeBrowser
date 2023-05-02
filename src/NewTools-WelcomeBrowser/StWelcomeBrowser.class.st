@@ -104,6 +104,7 @@ You can learn Pharo by clicking on the following expression:
 ```pharoeval
 ProfStef go.
 ```
+  
 ### Follow the MOOC
 
 Pharo has an excellent MOOC (Massive Open Online Course). You can find more information here: 
@@ -241,31 +242,6 @@ StWelcomeBrowser >> selectPrevious [
 
 	paginator selectedPage = 1 ifTrue: [ ^ self ].
 	self selectPage: paginator selectedPage - 1
-]
-
-{ #category : #'accessing - contents' }
-StWelcomeBrowser >> setupContent [
-
-	^ '# Quick setup
-
-Choose your preferred color theme by clicking one of the following:
-```pharoeval
-PharoLightTheme beCurrent
-``` 
-```pharoeval
-PharoDarkTheme beCurrent
-```
- 
-Switch fullscreen mode executing 
-```pharoeval
-Display toggleFullscreen
-```
-  
-You can also apply many other other settings by opening the SettingBrowser: 
-```pharoeval
-SettingBrowser open
-```
-'
 ]
 
 { #category : #'accessing - labels' }

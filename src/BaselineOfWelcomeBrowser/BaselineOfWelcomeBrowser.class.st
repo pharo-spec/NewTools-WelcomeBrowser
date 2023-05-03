@@ -19,16 +19,12 @@ BaselineOfWelcomeBrowser >> baseline: spec [
 
 { #category : #postload }
 BaselineOfWelcomeBrowser >> loadThemeImages [
-	| repositoryClass themeClass location |
+	| themeClass location |
 
-	repositoryClass := self class environment classNamed: #IceRepository.
-	repositoryClass ifNil: [ ^ self ].
-	
 	themeClass := self class environment classNamed: #StWelcomeTheme.
-	location := 	(repositoryClass registry 
-			detect: [ :each | each name = self repositoryName ])
-			location.
-	
+	location := 	self repositoryLocation.
+	'ESTEBAN DEBUG' crTrace.
+	location crTrace.
 	themeClass loadAllImagesFrom: location / 'resources' / 'themes'
 ]
 
@@ -41,7 +37,35 @@ BaselineOfWelcomeBrowser >> microdown: spec [
 			loads: #('RichText') ]
 ]
 
-{ #category : #postload }
+{ #category : #private }
+BaselineOfWelcomeBrowser >> packageRepository [
+	" Tries to determine a repository from which the baseline is being loaded. Useful for 
+	refering other baselines in the same repository. "
+	
+	^ (self class package mcWorkingCopy repositoryGroup repositories 
+		reject: [:each | each = MCCacheRepository uniqueInstance]) 
+		ifNotEmpty: [ :repositories | 
+			repositories 
+				detect: [ :each | each description beginsWith: 'tonel://' ]
+				ifNone: [ repositories anyOne ] ]
+		ifEmpty: [ nil ]
+]
+
+{ #category : #private }
+BaselineOfWelcomeBrowser >> repositoryLocation [
+	| locationFromIceberg |
+	
+	locationFromIceberg := (self class environment classNamed: #IceRepository)
+		ifNotNil: [ :iceberg |
+			iceberg registry 
+				detect: [ :each | each name = self repositoryName ]
+				ifNone: [ nil ] ].
+	
+	^ locationFromIceberg
+		ifNil: [ self packageRepository directory asFileReference ] 
+]
+
+{ #category : #private }
 BaselineOfWelcomeBrowser >> repositoryName [
 
 	^ 'NewTools-WelcomeBrowser'

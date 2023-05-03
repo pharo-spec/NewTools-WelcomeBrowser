@@ -23,8 +23,6 @@ BaselineOfWelcomeBrowser >> loadThemeImages [
 
 	themeClass := self class environment classNamed: #StWelcomeTheme.
 	location := 	self repositoryLocation.
-	'ESTEBAN DEBUG' crTrace.
-	location crTrace.
 	themeClass loadAllImagesFrom: location / 'resources' / 'themes'
 ]
 
@@ -62,7 +60,7 @@ BaselineOfWelcomeBrowser >> repositoryLocation [
 				ifNone: [ nil ] ].
 	
 	^ locationFromIceberg
-		ifNil: [ self packageRepository directory asFileReference ] 
+		ifNil: [ self packageRepository directory asFileReference parent ] 
 ]
 
 { #category : #private }

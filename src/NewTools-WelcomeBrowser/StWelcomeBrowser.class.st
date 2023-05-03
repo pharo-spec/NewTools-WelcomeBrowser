@@ -45,6 +45,27 @@ StWelcomeBrowser class >> open [
 	self new open
 ]
 
+{ #category : #'instance creation' }
+StWelcomeBrowser class >> openForRelease [
+	<script>
+	| window |
+	
+	window := self new open.
+	"HACK: reset extent and position because it seems to not being taken 
+	 into account before opening. Using directly the morphic widget, as we 
+	 know we are still in morphic world."
+	window withAdapterDo: [ :anAdapter | 
+		anAdapter widget
+			position: ((self currentWorld extent - self windowExtent) / 2) asIntegerPoint;
+			extent: self windowExtent ]		
+]
+
+{ #category : #accessing }
+StWelcomeBrowser class >> windowExtent [
+
+	^ 700@550
+]
+
 { #category : #private }
 StWelcomeBrowser >> addPresenter: aPresenter [
 
@@ -164,10 +185,10 @@ StWelcomeBrowser >> initializeWindow: aWindowPresenter [
 
 	aWindowPresenter
 		title: 'Welcome';
-		initialExtent: 700@550;
+		"initialExtent: self class windowExtent;"
 		bindKeyCombination: Character arrowRight asKeyCombination toAction: [ self selectNext ]; 
-		bindKeyCombination: Character arrowLeft asKeyCombination toAction: [ self selectPrevious ]; 
-		centered
+		bindKeyCombination: Character arrowLeft asKeyCombination toAction: [ self selectPrevious ]"; 
+		centered"
 ]
 
 { #category : #private }

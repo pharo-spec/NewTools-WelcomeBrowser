@@ -13,8 +13,7 @@ Class {
 		'hasPrevious',
 		'hasNext',
 		'nextBlock',
-		'previousBlock',
-		'titlePresenter'
+		'previousBlock'
 	],
 	#category : #'NewTools-WelcomeBrowser'
 }

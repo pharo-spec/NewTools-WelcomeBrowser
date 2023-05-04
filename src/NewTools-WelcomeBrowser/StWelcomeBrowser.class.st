@@ -6,13 +6,6 @@ Class {
 	#name : #StWelcomeBrowser,
 	#superclass : #StPresenter,
 	#instVars : [
-		'changesPanel',
-		'learnPanel',
-		'explorePanel',
-		'gettingHelpPanel',
-		'moreDocumentationPanel',
-		'welcomePanel',
-		'topicsList',
 		'contentPanel',
 		'millerList',
 		'paginator'

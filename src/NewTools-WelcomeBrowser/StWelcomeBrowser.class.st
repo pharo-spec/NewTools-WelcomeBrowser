@@ -56,7 +56,7 @@ StWelcomeBrowser class >> openForRelease [
 	 know we are still in morphic world."
 	window withAdapterDo: [ :anAdapter | 
 		anAdapter widget
-			position: (((976@665) - self windowExtent) / 2) asIntegerPoint;
+			position: (((self environment classNamed: #OSWorldRenderer) defaultExtent - self windowExtent) / 2) asIntegerPoint;
 			extent: self windowExtent ]
 ]
 

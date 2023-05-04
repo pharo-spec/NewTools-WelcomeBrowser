@@ -1,3 +1,6 @@
+"
+A topic that will contain subtopics (for example `StWelcomeSetupPresenter`)
+"
 Class {
 	#name : #StWelcomeTopicContainerPresenter,
 	#superclass : #StWelcomeTopicPresenter,

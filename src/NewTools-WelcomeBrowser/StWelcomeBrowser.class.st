@@ -185,10 +185,10 @@ StWelcomeBrowser >> initializeWindow: aWindowPresenter [
 
 	aWindowPresenter
 		title: 'Welcome';
-		"initialExtent: self class windowExtent;"
+		initialExtent: self class windowExtent;
 		bindKeyCombination: Character arrowRight asKeyCombination toAction: [ self selectNext ]; 
-		bindKeyCombination: Character arrowLeft asKeyCombination toAction: [ self selectPrevious ]"; 
-		centered"
+		bindKeyCombination: Character arrowLeft asKeyCombination toAction: [ self selectPrevious ]; 
+		centered
 ]
 
 { #category : #private }

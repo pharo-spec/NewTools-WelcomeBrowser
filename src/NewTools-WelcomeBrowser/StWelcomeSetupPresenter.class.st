@@ -1,3 +1,6 @@
+"
+A welcome topic that will allow quick settings (like theme choice)
+"
 Class {
 	#name : #StWelcomeSetupPresenter,
 	#superclass : #SpPresenter,

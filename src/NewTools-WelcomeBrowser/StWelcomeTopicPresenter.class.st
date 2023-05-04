@@ -1,3 +1,6 @@
+"
+A base for all welcome browser topics, it define navigation stuff and some common usage things.
+"
 Class {
 	#name : #StWelcomeTopicPresenter,
 	#superclass : #SpPresenter,

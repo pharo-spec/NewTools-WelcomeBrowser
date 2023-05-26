@@ -355,13 +355,13 @@ StWelcomeBrowser >> updatePresenter [
 { #category : #private }
 StWelcomeBrowser >> version [
 
-	^ '11'
+	^ SystemVersion current major asString
 ]
 
 { #category : #'accessing - contents' }
 StWelcomeBrowser >> welcomeContent [
 
-	^ '# Welcome to Pharo 11
+	^ '# Welcome to Pharo ' , self version , '
 
 ![StWelcomeBrowser class](pharo:///StWelcomeBrowser/logo)
 

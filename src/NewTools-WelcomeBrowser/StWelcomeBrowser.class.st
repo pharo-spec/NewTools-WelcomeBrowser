@@ -27,7 +27,7 @@ StWelcomeBrowser class >> menuCommandOn: aBuilder [
 		parent: #PharoHelp;
 		order: 1;
 		action: [ self open ];
-		icon: ((self iconNamed: #pharoIcon) scaledToSize: 16@16);
+		icon: ((self iconNamed: #pharoIcon) scaledToSize: (16@16) scaledByDisplayScaleFactor);
 		help: 'Welcome window for Pharo'
 ]
 

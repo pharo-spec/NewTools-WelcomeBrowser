@@ -10,7 +10,7 @@ Class {
 	#classInstVars : [
 		'uniqueInstance'
 	],
-	#category : #'NewTools-WelcomeBrowser'
+	#category : #'NewTools-WelcomeBrowser-Base'
 }
 
 { #category : #accessing }

@@ -4,7 +4,7 @@ A style contributor with welcome browser specifics
 Class {
 	#name : #StWelcomeStyleContributor,
 	#superclass : #StPharoStyleContributor,
-	#category : #'NewTools-WelcomeBrowser'
+	#category : #'NewTools-WelcomeBrowser-Base'
 }
 
 { #category : #styles }

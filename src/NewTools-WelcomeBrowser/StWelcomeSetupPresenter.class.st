@@ -11,7 +11,7 @@ Class {
 		'settingsHelpLabel',
 		'settingsButton'
 	],
-	#category : #'NewTools-WelcomeBrowser'
+	#category : #'NewTools-WelcomeBrowser-Base'
 }
 
 { #category : #layout }

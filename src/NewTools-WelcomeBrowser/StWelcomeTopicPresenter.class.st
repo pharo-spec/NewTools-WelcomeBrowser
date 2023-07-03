@@ -15,7 +15,7 @@ Class {
 		'nextBlock',
 		'previousBlock'
 	],
-	#category : #'NewTools-WelcomeBrowser'
+	#category : #'NewTools-WelcomeBrowser-Base'
 }
 
 { #category : #'private - actions' }

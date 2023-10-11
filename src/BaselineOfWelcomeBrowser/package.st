@@ -1,1 +1,1 @@
-Package { #name : #BaselineOfWelcomeBrowser }
+Package { #name : 'BaselineOfWelcomeBrowser' }

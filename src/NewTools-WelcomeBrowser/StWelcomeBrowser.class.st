@@ -3,23 +3,24 @@ A welcome browser for the Pharo system.
 
 "
 Class {
-	#name : #StWelcomeBrowser,
-	#superclass : #StPresenter,
+	#name : 'StWelcomeBrowser',
+	#superclass : 'StPresenter',
 	#instVars : [
 		'contentPanel',
 		'millerList',
 		'paginator'
 	],
-	#category : #'NewTools-WelcomeBrowser'
+	#category : 'NewTools-WelcomeBrowser',
+	#package : 'NewTools-WelcomeBrowser'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 StWelcomeBrowser class >> logo [
 
 	^ self iconNamed: #pharoBig
 ]
 
-{ #category : #'world menu' }
+{ #category : 'world menu' }
 StWelcomeBrowser class >> menuCommandOn: aBuilder [
 	<worldMenu>
 
@@ -31,14 +32,14 @@ StWelcomeBrowser class >> menuCommandOn: aBuilder [
 		help: 'Welcome window for Pharo'
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 StWelcomeBrowser class >> open [
 	<script>
 	
 	self new open
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 StWelcomeBrowser class >> openForRelease [
 	<script>
 	| window |
@@ -53,20 +54,20 @@ StWelcomeBrowser class >> openForRelease [
 			extent: self windowExtent ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 StWelcomeBrowser class >> windowExtent [
 
 	^ (700@550) scaledByDisplayScaleFactor
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 StWelcomeBrowser >> addPresenter: aPresenter [
 
 	millerList addPresenter: aPresenter.
 	paginator addPage: aPresenter
 ]
 
-{ #category : #'accessing - contents' }
+{ #category : 'accessing - contents' }
 StWelcomeBrowser >> changesContent [
 
 	^ '# Pharo 11 changes overview
@@ -134,18 +135,18 @@ Thank you all for your contributions!
 The complete list of changes can be viewed on a weekly basis [here](https://github.com/pharo-project/pharo-changelogs/tree/master/weekly).'
 ]
 
-{ #category : #'accessing - labels' }
+{ #category : 'accessing - labels' }
 StWelcomeBrowser >> changesLabel [
 
 	^ 'Changes in Pharo ', self version
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 StWelcomeBrowser >> connectPresenters [
 
 ]
 
-{ #category : #layout }
+{ #category : 'layout' }
 StWelcomeBrowser >> defaultLayout [
 
 	^ SpBoxLayout newTopToBottom
@@ -158,7 +159,7 @@ StWelcomeBrowser >> defaultLayout [
 		yourself
 ]
 
-{ #category : #'accessing - contents' }
+{ #category : 'accessing - contents' }
 StWelcomeBrowser >> helpContent [
 
 	^ '# Learn Pharo
@@ -212,13 +213,13 @@ There you can find:
 - Presentations: [http://www.slideshare.net/pharoproject/](http://www.slideshare.net/pharoproject/)'
 ]
 
-{ #category : #'accessing - labels' }
+{ #category : 'accessing - labels' }
 StWelcomeBrowser >> helpLabel [
 
 	^ 'Getting Help'
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 StWelcomeBrowser >> initializePresenters [
 
 	self addStyle: 'welcome'.
@@ -235,7 +236,7 @@ StWelcomeBrowser >> initializePresenters [
 	paginator withoutResizingEdges
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 StWelcomeBrowser >> initializeWindow: aWindowPresenter [
 
 	aWindowPresenter
@@ -246,19 +247,19 @@ StWelcomeBrowser >> initializeWindow: aWindowPresenter [
 		centered
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 StWelcomeBrowser >> newContainerTopic [ 
 
 	^ self instantiate: StWelcomeTopicContainerPresenter
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 StWelcomeBrowser >> newMicrodownTopic [ 
 
 	^ self instantiate: StWelcomeTopicMicrodownPresenter
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 StWelcomeBrowser >> newTopicFrom: aTopic [
 
 	^ self 
@@ -266,7 +267,7 @@ StWelcomeBrowser >> newTopicFrom: aTopic [
 		on: aTopic
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 StWelcomeBrowser >> newTopicTitle: aTitle contents: aString [
 	
 	^ self newMicrodownTopic 
@@ -275,7 +276,7 @@ StWelcomeBrowser >> newTopicTitle: aTitle contents: aString [
 		yourself
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 StWelcomeBrowser >> newTopicTitle: aTitle presenterClass: aClass [
 	
 	^ self newContainerTopic 
@@ -284,7 +285,7 @@ StWelcomeBrowser >> newTopicTitle: aTitle presenterClass: aClass [
 		yourself
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 StWelcomeBrowser >> select: aTopic [
 
 	aTopic ifNil: [ 
@@ -299,34 +300,34 @@ StWelcomeBrowser >> select: aTopic [
 	
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 StWelcomeBrowser >> selectNext [ 
 
 	(paginator selectedPage = millerList pages size) ifTrue: [ ^ self ].
 	self selectPage: paginator selectedPage + 1
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 StWelcomeBrowser >> selectPage: aNumber [
 
 	paginator selectPage: aNumber.
 	(millerList pages at: paginator selectedPage) takeKeyboardFocus
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 StWelcomeBrowser >> selectPrevious [
 
 	paginator selectedPage = 1 ifTrue: [ ^ self ].
 	self selectPage: paginator selectedPage - 1
 ]
 
-{ #category : #'accessing - labels' }
+{ #category : 'accessing - labels' }
 StWelcomeBrowser >> setupLabel [
 
 	^ 'Quick Setup'
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 StWelcomeBrowser >> topics [
 
 	^ {
@@ -338,7 +339,7 @@ StWelcomeBrowser >> topics [
 	}
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 StWelcomeBrowser >> updatePresenter [
 	| topics |
 
@@ -352,13 +353,13 @@ StWelcomeBrowser >> updatePresenter [
 	self selectPage: 1
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 StWelcomeBrowser >> version [
 
 	^ SystemVersion current major asString
 ]
 
-{ #category : #'accessing - contents' }
+{ #category : 'accessing - contents' }
 StWelcomeBrowser >> welcomeContent [
 
 	^ '# Welcome to Pharo ' , self version , '
@@ -372,7 +373,7 @@ Pharo is a pure object-oriented programming language and a powerful environment,
 For more information, please visit here: [http://pharo.org](http://pharo.org)'
 ]
 
-{ #category : #'accessing - labels' }
+{ #category : 'accessing - labels' }
 StWelcomeBrowser >> welcomeLabel [
 
 	^ 'Welcome to Pharo ', self version

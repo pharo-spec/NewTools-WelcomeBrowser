@@ -2,8 +2,8 @@
 A base for all welcome browser topics, it define navigation stuff and some common usage things.
 "
 Class {
-	#name : #StWelcomeTopicPresenter,
-	#superclass : #SpPresenter,
+	#name : 'StWelcomeTopicPresenter',
+	#superclass : 'SpPresenter',
 	#traits : 'SpTActivable + SpTModel',
 	#classTraits : 'SpTActivable classTrait + SpTModel classTrait',
 	#instVars : [
@@ -15,10 +15,11 @@ Class {
 		'nextBlock',
 		'previousBlock'
 	],
-	#category : #'NewTools-WelcomeBrowser'
+	#category : 'NewTools-WelcomeBrowser',
+	#package : 'NewTools-WelcomeBrowser'
 }
 
-{ #category : #'private - actions' }
+{ #category : 'private - actions' }
 StWelcomeTopicPresenter >> activate [
 	"Perform here the activation. A common usage would be something like:
 
@@ -27,13 +28,13 @@ StWelcomeTopicPresenter >> activate [
 	"
 ]
 
-{ #category : #'api - focus' }
+{ #category : 'api - focus' }
 StWelcomeTopicPresenter >> defaultKeyboardFocus [
 
 	^ contentPresenter
 ]
 
-{ #category : #layout }
+{ #category : 'layout' }
 StWelcomeTopicPresenter >> defaultLayout [
 
 	^ SpBoxLayout newLeftToRight
@@ -43,7 +44,7 @@ StWelcomeTopicPresenter >> defaultLayout [
 		yourself
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 StWelcomeTopicPresenter >> hasPrevious: prevBoolean hasNext: nextBoolean [
 
 	hasPrevious := prevBoolean.
@@ -51,7 +52,7 @@ StWelcomeTopicPresenter >> hasPrevious: prevBoolean hasNext: nextBoolean [
 	self updatePresenter
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 StWelcomeTopicPresenter >> imageFor: aSymbol [
 	
 	aSymbol = #previous ifTrue: [ ^ self iconNamed: #smallBack ].
@@ -60,7 +61,7 @@ StWelcomeTopicPresenter >> imageFor: aSymbol [
 	self error: 'Should not arrive here'
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 StWelcomeTopicPresenter >> initialize [
 
 	hasPrevious := false.
@@ -68,7 +69,7 @@ StWelcomeTopicPresenter >> initialize [
 	super initialize
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 StWelcomeTopicPresenter >> initializePresenters [
 
 	previousPresenter := self 
@@ -79,7 +80,7 @@ StWelcomeTopicPresenter >> initializePresenters [
 		do: [ self selectNext ]
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 StWelcomeTopicPresenter >> newNavigationTo: aSymbol do: aBlock [  
 	| navigationPresenter imagePresenter |
 
@@ -110,36 +111,36 @@ StWelcomeTopicPresenter >> newNavigationTo: aSymbol do: aBlock [
 	^ navigationPresenter
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 StWelcomeTopicPresenter >> selectNext [
 
 	nextBlock value
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 StWelcomeTopicPresenter >> selectPrevious [
 
 	previousBlock value
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 StWelcomeTopicPresenter >> title: aTitle [
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 StWelcomeTopicPresenter >> updatePresenter [
 
 	hasPrevious ifTrue: [ previousPresenter show ].
 	hasNext ifTrue: [ nextPresenter show ]
 ]
 
-{ #category : #enumerating }
+{ #category : 'enumerating' }
 StWelcomeTopicPresenter >> whenNextDo: aBlock [
 
 	nextBlock := aBlock
 ]
 
-{ #category : #enumerating }
+{ #category : 'enumerating' }
 StWelcomeTopicPresenter >> whenPreviousDo: aBlock [
 
 	previousBlock := aBlock

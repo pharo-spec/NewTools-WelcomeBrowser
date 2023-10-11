@@ -2,12 +2,13 @@
 A style contributor with welcome browser specifics
 "
 Class {
-	#name : #StWelcomeStyleContributor,
-	#superclass : #StPharoStyleContributor,
-	#category : #'NewTools-WelcomeBrowser'
+	#name : 'StWelcomeStyleContributor',
+	#superclass : 'StPharoStyleContributor',
+	#category : 'NewTools-WelcomeBrowser',
+	#package : 'NewTools-WelcomeBrowser'
 }
 
-{ #category : #styles }
+{ #category : 'styles' }
 StWelcomeStyleContributor >> styleSheetContribution [
 
 	^ SpStyleVariableSTONReader fromString: '.application [

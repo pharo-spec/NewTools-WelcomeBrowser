@@ -2,8 +2,8 @@
 A welcome topic that will allow quick settings (like theme choice)
 "
 Class {
-	#name : #StWelcomeSetupPresenter,
-	#superclass : #SpPresenter,
+	#name : 'StWelcomeSetupPresenter',
+	#superclass : 'SpPresenter',
 	#instVars : [
 		'lightThemePresenter',
 		'darkThemePresenter',
@@ -11,10 +11,11 @@ Class {
 		'settingsHelpLabel',
 		'settingsButton'
 	],
-	#category : #'NewTools-WelcomeBrowser'
+	#category : 'NewTools-WelcomeBrowser',
+	#package : 'NewTools-WelcomeBrowser'
 }
 
-{ #category : #layout }
+{ #category : 'layout' }
 StWelcomeSetupPresenter >> defaultLayout [
 
 	^ SpBoxLayout newTopToBottom
@@ -44,7 +45,7 @@ StWelcomeSetupPresenter >> defaultLayout [
 		yourself
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 StWelcomeSetupPresenter >> initializePresenters [
 
 	self addStyle: 'welcomeSetup'.
@@ -66,7 +67,7 @@ StWelcomeSetupPresenter >> initializePresenters [
 		yourself
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 StWelcomeSetupPresenter >> newBox: aTitle with: aLayout [
 	| presenter titleLabel |
 	
@@ -82,7 +83,7 @@ StWelcomeSetupPresenter >> newBox: aTitle with: aLayout [
 	^ presenter
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 StWelcomeSetupPresenter >> newThemePresenter: aTheme [
 	| presenter imagePresenter labelPresenter |
 	
@@ -110,13 +111,13 @@ StWelcomeSetupPresenter >> newThemePresenter: aTheme [
 	^ presenter
 ]
 
-{ #category : #actions }
+{ #category : 'actions' }
 StWelcomeSetupPresenter >> openSettingsBrowser [
 
 	SettingBrowser open
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 StWelcomeSetupPresenter >> selectTheme: aTheme [
 
 	lightThemePresenter removeStyle: 'welcomeThemeSelected'.
@@ -125,13 +126,13 @@ StWelcomeSetupPresenter >> selectTheme: aTheme [
 	aTheme activate
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 StWelcomeSetupPresenter >> settingsContent [
 
 	^ 'You can also apply many other settings by opening the Settings Browser'
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 StWelcomeSetupPresenter >> toggleFullScreen: aBoolean [
 
 	Display fullscreen: aBoolean

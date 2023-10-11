@@ -2,19 +2,20 @@
 A topic that will include microdown text.
 "
 Class {
-	#name : #StWelcomeTopicMicrodownPresenter,
-	#superclass : #StWelcomeTopicPresenter,
-	#category : #'NewTools-WelcomeBrowser'
+	#name : 'StWelcomeTopicMicrodownPresenter',
+	#superclass : 'StWelcomeTopicPresenter',
+	#category : 'NewTools-WelcomeBrowser',
+	#package : 'NewTools-WelcomeBrowser'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 StWelcomeTopicMicrodownPresenter >> contents: aString [
 
 	contentPresenter documentFromString: aString
 	
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 StWelcomeTopicMicrodownPresenter >> initializePresenters [
 
 	super initializePresenters.

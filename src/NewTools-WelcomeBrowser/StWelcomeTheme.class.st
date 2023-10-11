@@ -2,43 +2,44 @@
 Ennumeration for the different themes availabla (dark, light)
 "
 Class {
-	#name : #StWelcomeTheme,
-	#superclass : #Object,
+	#name : 'StWelcomeTheme',
+	#superclass : 'Object',
 	#instVars : [
 		'image'
 	],
 	#classInstVars : [
 		'uniqueInstance'
 	],
-	#category : #'NewTools-WelcomeBrowser'
+	#category : 'NewTools-WelcomeBrowser',
+	#package : 'NewTools-WelcomeBrowser'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 StWelcomeTheme class >> all [
 
 	^ { self light. self dark }
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 StWelcomeTheme class >> dark [
 
 	^ StWelcomeDarkTheme uniqueInstance
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 StWelcomeTheme class >> light [
 
 	^ StWelcomeLightTheme uniqueInstance
 ]
 
-{ #category : #'private - utils' }
+{ #category : 'private - utils' }
 StWelcomeTheme class >> loadAllImagesFrom: aDirectory [
 
 	self all do: [ :each | 
 		each loadImageFrom: aDirectory ]
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 StWelcomeTheme class >> uniqueInstance [
 
 	self = StWelcomeTheme
@@ -46,44 +47,44 @@ StWelcomeTheme class >> uniqueInstance [
 	^ uniqueInstance ifNil: [ uniqueInstance := self basicNew initialize ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 StWelcomeTheme >> activate [
 
 	self themeClass beCurrent
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 StWelcomeTheme >> image [
 
 	^ image
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 StWelcomeTheme >> imageFileName [
 
 	^ self subclassResponsibility
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 StWelcomeTheme >> isActive [
 
 	^ UITheme current class = self themeClass
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 StWelcomeTheme >> label [
 
 	self subclassResponsibility
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 StWelcomeTheme >> loadImageFrom: aDirectory [
 
 	image := (aDirectory / self imageFileName) 
 		binaryReadStreamDo: [ :stream | PNGReadWriter formFromStream: stream ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 StWelcomeTheme >> themeClass [
 
 	^ self subclassResponsibility

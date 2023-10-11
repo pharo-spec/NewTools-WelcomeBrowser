@@ -2,24 +2,25 @@
 Define the dark theme
 "
 Class {
-	#name : #StWelcomeDarkTheme,
-	#superclass : #StWelcomeTheme,
-	#category : #'NewTools-WelcomeBrowser'
+	#name : 'StWelcomeDarkTheme',
+	#superclass : 'StWelcomeTheme',
+	#category : 'NewTools-WelcomeBrowser',
+	#package : 'NewTools-WelcomeBrowser'
 }
 
-{ #category : #private }
+{ #category : 'private' }
 StWelcomeDarkTheme >> imageFileName [
 
 	^ 'dark.png'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 StWelcomeDarkTheme >> label [
 
 	^ 'Dark'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 StWelcomeDarkTheme >> themeClass [
 
 	^ PharoDarkTheme

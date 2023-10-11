@@ -1,10 +1,11 @@
 Class {
-	#name : #BaselineOfWelcomeBrowser,
-	#superclass : #BaselineOf,
-	#category : #BaselineOfWelcomeBrowser
+	#name : 'BaselineOfWelcomeBrowser',
+	#superclass : 'BaselineOf',
+	#category : 'BaselineOfWelcomeBrowser',
+	#package : 'BaselineOfWelcomeBrowser'
 }
 
-{ #category : #baselines }
+{ #category : 'baselines' }
 BaselineOfWelcomeBrowser >> baseline: spec [
 	<baseline>
 
@@ -17,7 +18,7 @@ BaselineOfWelcomeBrowser >> baseline: spec [
 			with: [ spec requires: 'Microdown' ] ]
 ]
 
-{ #category : #postload }
+{ #category : 'postload' }
 BaselineOfWelcomeBrowser >> loadThemeImages [
 	| themeClass location |
 
@@ -26,7 +27,7 @@ BaselineOfWelcomeBrowser >> loadThemeImages [
 	themeClass loadAllImagesFrom: location / 'resources' / 'themes'
 ]
 
-{ #category : #baselines }
+{ #category : 'baselines' }
 BaselineOfWelcomeBrowser >> microdown: spec [
 
 	spec baseline: 'Microdown' with: [
@@ -35,7 +36,7 @@ BaselineOfWelcomeBrowser >> microdown: spec [
 			loads: #('RichText') ]
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BaselineOfWelcomeBrowser >> packageRepository [
 	" Tries to determine a repository from which the baseline is being loaded. Useful for 
 	refering other baselines in the same repository. "
@@ -49,7 +50,7 @@ BaselineOfWelcomeBrowser >> packageRepository [
 		ifEmpty: [ nil ]
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BaselineOfWelcomeBrowser >> repositoryLocation [
 	| locationFromIceberg |
 	
@@ -63,7 +64,7 @@ BaselineOfWelcomeBrowser >> repositoryLocation [
 		ifNil: [ self packageRepository directory asFileReference parent ] 
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BaselineOfWelcomeBrowser >> repositoryName [
 
 	^ 'NewTools-WelcomeBrowser'

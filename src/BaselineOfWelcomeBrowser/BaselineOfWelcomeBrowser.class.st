@@ -32,7 +32,7 @@ BaselineOfWelcomeBrowser >> microdown: spec [
 
 	spec baseline: 'Microdown' with: [
 		spec
-			repository: 'github://pillar-markup/Microdown:integration/src';
+			repository: 'github://pillar-markup/Microdown:Pharo12/src';
 			loads: #('RichText') ]
 ]
 

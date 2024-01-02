@@ -10,7 +10,7 @@ BaselineOfWelcomeBrowser >> baseline: spec [
 	<baseline>
 
 	spec for: #'common' do: [
-		spec postLoadDoIt: #loadThemeImages:.
+		spec postLoadDoIt: #loadThemeImagesWithTarget:spec:.
 		
 		self microdown: spec.
 		spec 
@@ -19,7 +19,7 @@ BaselineOfWelcomeBrowser >> baseline: spec [
 ]
 
 { #category : 'postload' }
-BaselineOfWelcomeBrowser >> loadThemeImages: spec [
+BaselineOfWelcomeBrowser >> loadThemeImagesWithTarget: aTarget spec: spec [
 	| themeClass location |
 
 	themeClass := self class environment classNamed: #StWelcomeTheme.

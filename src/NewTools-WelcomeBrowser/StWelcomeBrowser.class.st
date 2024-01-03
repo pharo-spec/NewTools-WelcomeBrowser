@@ -263,7 +263,7 @@ StWelcomeBrowser >> select: aTopic [
 		^ self ].
 
 	self flag: #HACK. "I need to select an interval to force the text to 
-	be at the begining, othewise it will show the last part"
+	be at the beginning, otherwise it will show the last part"
 	contentPanel 
 		documentFromString: aTopic value; 
 		selectionInterval: (1 to: 0)

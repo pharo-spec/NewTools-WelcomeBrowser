@@ -10,8 +10,9 @@ Class {
 		'millerList',
 		'paginator'
 	],
-	#category : 'NewTools-WelcomeBrowser',
-	#package : 'NewTools-WelcomeBrowser'
+	#category : 'NewTools-WelcomeBrowser-Base',
+	#package : 'NewTools-WelcomeBrowser',
+	#tag : 'Base'
 }
 
 { #category : 'accessing' }
@@ -139,11 +140,6 @@ The complete list of changes can be viewed on a weekly basis [here](https://gith
 StWelcomeBrowser >> changesLabel [
 
 	^ 'Changes in Pharo ', self version
-]
-
-{ #category : 'initialization' }
-StWelcomeBrowser >> connectPresenters [
-
 ]
 
 { #category : 'layout' }

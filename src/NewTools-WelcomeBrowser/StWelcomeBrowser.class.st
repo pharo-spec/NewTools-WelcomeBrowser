@@ -118,15 +118,13 @@ StWelcomeBrowser >> contributorContent [
 	^ '## Contributors
 We always say Pharo is yours. It is yours because we made it for you, but most importantly, because it is made by the invaluable contributions of our great community (yourself).  
 
-A large community of people from all around the world contributed to Pharo 12.0 by making pull requests, reporting bugs, participating in discussion threads, providing feedback and more. If you want to join us and contribute as well please check
-
-- [https://pharo.org/contribute](https://pharo.org/contribute) 
+A large community of people from all around the world contributed to Pharo 12.0 by making pull requests, reporting bugs, participating in discussion threads, providing feedback and more. If you want to join us and contribute as well please check [https://pharo.org/contribute](https://pharo.org/contribute) 
 
 Thank you all for your contributions!  
 
 ## Pharo Association
 
-The Pharo association''s goal is to let individuals support the promotion and development of Pharo. If you want to support and join visit
+The Pharo association''s goal is to let individuals support the promotion and development of Pharo. If you want to support us and join then visit
 
 - [https://association.pharo.org](https://association.pharo.org)
 
@@ -273,7 +271,7 @@ Pharo has an excellent MOOC (Massive Open Online Course). You can find more info
 [http://mooc.pharo.org](http://mooc.pharo.org)
 
 Check the testimonies: they are great and fun. Additionally there is a new MOOC on 
-Advanced Object-Oriented Design and Development with Pharo
+"Advanced Object-Oriented Design and Development with Pharo" available
 
 [https://advanced-design-mooc.pharo.org](https://advanced-design-mooc.pharo.org)
 
@@ -283,13 +281,12 @@ There are several free Pharo books that can be download here:
 
 [http://books.pharo.org](http://books.pharo.org)
 
-A very interesting starting point would be looking into the "Updated Pharo by Example" free book. It is based on Pharo 90, but most .  
-You can find the book here:
+A very interesting starting point would be looking into the "Updated Pharo by Example" free book. It is based on Pharo 90, so using this version is recommended to learn.
 
-- [https://github.com/SquareBracketAssociates/UpdatedPharoByExample](https://github.com/SquareBracketAssociates/UpdatedPharoByExample)
-- [https://github.com/SquareBracketAssociates/PharoByExample9](https://github.com/SquareBracketAssociates/PharoByExample9)
-or order your copy here:
-- [Pharo 9 by example on Amazon](https://www.amazon.com/Pharo-example-Technology-Collection/dp/2322394106/)'
+You can find the book here: [https://github.com/SquareBracketAssociates/PharoByExample9](https://github.com/SquareBracketAssociates/PharoByExample9)
+and you can order a copy here: [Pharo 9 by example on Amazon](https://www.amazon.com/Pharo-example-Technology-Collection/dp/2322394106/)
+
+Many of the Pharo books and bookolets are available in [https://github.com/SquareBracketAssociates](https://github.com/SquareBracketAssociates) and you can contribute to them.'
 ]
 
 { #category : 'private' }

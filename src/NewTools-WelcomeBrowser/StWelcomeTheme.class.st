@@ -69,7 +69,7 @@ StWelcomeTheme >> imageFileName [
 { #category : 'testing' }
 StWelcomeTheme >> isActive [
 
-	^ UITheme current class = self themeClass
+	^ Smalltalk ui theme class = self themeClass
 ]
 
 { #category : 'accessing' }

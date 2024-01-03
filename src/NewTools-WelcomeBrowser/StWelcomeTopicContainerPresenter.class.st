@@ -4,8 +4,9 @@ A topic that will contain subtopics (for example `StWelcomeSetupPresenter`)
 Class {
 	#name : 'StWelcomeTopicContainerPresenter',
 	#superclass : 'StWelcomeTopicPresenter',
-	#category : 'NewTools-WelcomeBrowser',
-	#package : 'NewTools-WelcomeBrowser'
+	#category : 'NewTools-WelcomeBrowser-Presenters',
+	#package : 'NewTools-WelcomeBrowser',
+	#tag : 'Presenters'
 }
 
 { #category : 'accessing' }

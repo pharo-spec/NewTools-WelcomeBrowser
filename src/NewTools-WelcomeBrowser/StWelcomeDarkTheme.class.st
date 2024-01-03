@@ -4,8 +4,9 @@ Define the dark theme
 Class {
 	#name : 'StWelcomeDarkTheme',
 	#superclass : 'StWelcomeTheme',
-	#category : 'NewTools-WelcomeBrowser',
-	#package : 'NewTools-WelcomeBrowser'
+	#category : 'NewTools-WelcomeBrowser-Themes',
+	#package : 'NewTools-WelcomeBrowser',
+	#tag : 'Themes'
 }
 
 { #category : 'private' }

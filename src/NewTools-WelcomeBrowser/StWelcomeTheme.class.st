@@ -10,8 +10,9 @@ Class {
 	#classInstVars : [
 		'uniqueInstance'
 	],
-	#category : 'NewTools-WelcomeBrowser',
-	#package : 'NewTools-WelcomeBrowser'
+	#category : 'NewTools-WelcomeBrowser-Themes',
+	#package : 'NewTools-WelcomeBrowser',
+	#tag : 'Themes'
 }
 
 { #category : 'accessing' }
@@ -47,7 +48,7 @@ StWelcomeTheme class >> uniqueInstance [
 	^ uniqueInstance ifNil: [ uniqueInstance := self basicNew initialize ]
 ]
 
-{ #category : 'accessing' }
+{ #category : 'activation' }
 StWelcomeTheme >> activate [
 
 	self themeClass beCurrent
@@ -68,7 +69,7 @@ StWelcomeTheme >> imageFileName [
 { #category : 'testing' }
 StWelcomeTheme >> isActive [
 
-	^ UITheme current class = self themeClass
+	^ Smalltalk ui theme class = self themeClass
 ]
 
 { #category : 'accessing' }

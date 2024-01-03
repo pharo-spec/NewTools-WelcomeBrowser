@@ -39,19 +39,22 @@ BaselineOfWelcomeBrowser >> microdown: spec [
 { #category : 'private' }
 BaselineOfWelcomeBrowser >> repositoryLocation: spec [
 
-	| locationFromIceberg |
-	locationFromIceberg := (self class environment classNamed:
-		                        #IceRepository) ifNotNil: [ :iceberg |
-		                       iceberg registry
-			                       detect: [ :each |
-			                       each name = self repositoryName ]
-			                       ifNone: [ nil ] ].
+	| icebergRepository |
+	icebergRepository := (self class environment classNamed:
+		                      #IceRepository) ifNotNil: [ :iceberg |
+		                     iceberg registry
+			                     detect: [ :each |
+			                     each name asLowercase
+			                     = self repositoryName asLowercase ]
+			                     ifNone: [ nil ] ].
 
-	^ locationFromIceberg ifNil: [
-		  | tonelURL |
-		  tonelURL := self packageRepositoryURLForSpec: spec.
-		  (TonelRepository basicFromUrl: tonelURL) directory asFileReference
-			  parent ]
+	^ icebergRepository
+		  ifNil: [
+			  | tonelURL |
+			  tonelURL := self packageRepositoryURLForSpec: spec.
+			  (TonelRepository basicFromUrl: tonelURL) directory
+				  asFileReference parent ]
+		  ifNotNil: [ icebergRepository location ]
 ]
 
 { #category : 'private' }

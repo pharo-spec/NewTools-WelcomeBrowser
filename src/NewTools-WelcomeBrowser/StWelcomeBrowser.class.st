@@ -251,7 +251,10 @@ Pharo has an excellent MOOC (Massive Open Online Course). You can find more info
 
 [http://mooc.pharo.org](http://mooc.pharo.org)
 
-Check the testimonies: they are great and fun. 
+Check the testimonies: they are great and fun. Additionally there is a new MOOC on 
+Advanced Object-Oriented Design and Development with Pharo
+
+[https://advanced-design-mooc.pharo.org](https://advanced-design-mooc.pharo.org)
 
 ### Books
 

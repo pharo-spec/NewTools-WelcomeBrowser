@@ -93,6 +93,7 @@ Current Pharo development status:
 3. xxxx Pull requests processed since Pharo 11, not counting separately managed projects:
 - [http://github.com/pharo-spec/NewTools](http://github.com/pharo-spec/NewTools)
 - [http://github.com/pharo-spec/NewTools-DocumentBrowser](http://github.com/pharo-spec/NewTools-DocumentBrowser)
+- [https://github.com/pharo-spec/NewTools-WelcomeBrowser](https://github.com/pharo-spec/NewTools-WelcomeBrowser)
 - [http://github.com/pharo-spec/Spec](http://github.com/pharo-spec/Spec)
 - [http://github.com/pharo-vcs/Iceberg](http://github.com/pharo-vcs/Iceberg)
 - [https://github.com/pharo-graphics/Roassal](https://github.com/pharo-graphics/Roassal)

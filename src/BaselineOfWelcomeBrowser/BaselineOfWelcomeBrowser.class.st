@@ -10,7 +10,7 @@ BaselineOfWelcomeBrowser >> baseline: spec [
 	<baseline>
 
 	spec for: #'common' do: [
-		spec postLoadDoIt: #loadThemeImagesWithTarget:spec:.
+		spec postLoadDoIt: #loadThemeImages.
 		
 		self microdown: spec.
 		spec 
@@ -19,11 +19,11 @@ BaselineOfWelcomeBrowser >> baseline: spec [
 ]
 
 { #category : 'postload' }
-BaselineOfWelcomeBrowser >> loadThemeImagesWithTarget: aTarget spec: spec [
+BaselineOfWelcomeBrowser >> loadThemeImages [
 	| themeClass location |
 
 	themeClass := self class environment classNamed: #StWelcomeTheme.
-	location := 	self repositoryLocation: spec.
+	location := 	self repositoryLocation.
 	themeClass loadAllImagesFrom: location / 'resources' / 'themes'
 ]
 
@@ -36,22 +36,32 @@ BaselineOfWelcomeBrowser >> microdown: spec [
 			loads: #('RichText') ]
 ]
 
-{ #category : 'private' }
-BaselineOfWelcomeBrowser >> repositoryLocation: spec [
+{ #category : 'as yet unclassified' }
+BaselineOfWelcomeBrowser >> packageRepository [
+	" Tries to determine a repository from which the baseline is being loaded. Useful for 
+	refering other baselines in the same repository. "
 
+	^ (self class package mcWorkingCopy repositoryGroup repositories
+		   reject: [ :each | each = MCCacheRepository uniqueInstance ])
+		  ifNotEmpty: [ :repositories |
+			  repositories
+				  detect: [ :each | each description beginsWith: 'tonel://' ]
+				  ifNone: [ repositories anyOne ] ]
+		  ifEmpty: [ nil ]
+]
+
+{ #category : 'as yet unclassified' }
+BaselineOfWelcomeBrowser >> repositoryLocation [
 	| locationFromIceberg |
-	locationFromIceberg := (self class environment classNamed:
-		                        #IceRepository) ifNotNil: [ :iceberg |
-		                       iceberg registry
-			                       detect: [ :each |
-			                       each name = self repositoryName ]
-			                       ifNone: [ nil ] ].
 
-	^ locationFromIceberg ifNil: [
-		  | tonelURL |
-		  tonelURL := self packageRepositoryURLForSpec: spec.
-		  (TonelRepository basicFromUrl: tonelURL) directory asFileReference
-			  parent ]
+	locationFromIceberg := (self class environment classNamed: #IceRepository)
+		ifNotNil: [ :iceberg |
+			iceberg registry 
+				detect: [ :each | each name = self repositoryName ]
+				ifNone: [ nil ] ].
+
+	^ locationFromIceberg
+		ifNil: [ self packageRepository directory asFileReference parent ] 
 ]
 
 { #category : 'private' }

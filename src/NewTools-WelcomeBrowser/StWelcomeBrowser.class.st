@@ -101,11 +101,6 @@ Current Pharo development status:
 - [http://github.com/pillar-markup/BeautifulComments](http://github.com/pillar-markup/BeautifulComments)
 - [https://github.com/pharo-project/pharo-vm](https://github.com/pharo-project/pharo-vm)
 
-## Contributors
-We always say Pharo is yours. It is yours because we made it for you, but most importantly, because it is made by the invaluable contributions of our great community (yourself).  
-A large community of people from all around the world contributed to Pharo 12.0 by making pull requests, reporting bugs, participating in discussion threads, providing feedback and more.  
-Thank you all for your contributions!  
-
 ## Changelog
 
 The complete list of changes can be viewed on a weekly basis [here](https://github.com/pharo-project/pharo-changelogs/tree/master/weekly).'
@@ -115,6 +110,32 @@ The complete list of changes can be viewed on a weekly basis [here](https://gith
 StWelcomeBrowser >> changesLabel [
 
 	^ 'Changes in Pharo ', self version
+]
+
+{ #category : 'accessing - contents' }
+StWelcomeBrowser >> contributorContent [
+
+	^ '## Contributors
+We always say Pharo is yours. It is yours because we made it for you, but most importantly, because it is made by the invaluable contributions of our great community (yourself).  
+
+A large community of people from all around the world contributed to Pharo 12.0 by making pull requests, reporting bugs, participating in discussion threads, providing feedback and more. If you want to join us and contribute as well please check
+
+- [https://pharo.org/contribute](https://pharo.org/contribute) 
+
+Thank you all for your contributions!  
+
+## Pharo Association
+
+The Pharo association''s goal is to let individuals support the promotion and development of Pharo. If you want to support and join visit
+
+- [https://association.pharo.org](https://association.pharo.org)
+
+## Pharo Consortium
+
+As a company or organization you might want to become a consortium member you help promote Pharo. The consortium promotes Pharo by supporting conferences, books, videos, exhibitions, and conference participation.
+
+- [https://consortium.pharo.org](https://consortium.pharo.org)
+'
 ]
 
 { #category : 'layout' }
@@ -323,7 +344,8 @@ StWelcomeBrowser >> topics [
 	self newTopicTitle: self helpLabel contents: self learnContent.
 	self newTopicTitle: self helpLabel contents: self resourceContent.  	
 	self newTopicTitle: self helpLabel contents: self helpContent. 
-	self newTopicTitle: self changesLabel contents: self changesContent. 
+	self newTopicTitle: self changesLabel contents: self changesContent.
+	self newTopicTitle: self helpLabel contents: self contributorContent.  
 	}
 ]
 

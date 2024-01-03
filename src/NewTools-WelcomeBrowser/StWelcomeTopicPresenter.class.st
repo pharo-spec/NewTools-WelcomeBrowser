@@ -15,8 +15,9 @@ Class {
 		'nextBlock',
 		'previousBlock'
 	],
-	#category : 'NewTools-WelcomeBrowser',
-	#package : 'NewTools-WelcomeBrowser'
+	#category : 'NewTools-WelcomeBrowser-Presenters',
+	#package : 'NewTools-WelcomeBrowser',
+	#tag : 'Presenters'
 }
 
 { #category : 'private - actions' }

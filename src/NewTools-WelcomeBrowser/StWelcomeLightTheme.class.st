@@ -4,8 +4,9 @@ Define the light theme.
 Class {
 	#name : 'StWelcomeLightTheme',
 	#superclass : 'StWelcomeTheme',
-	#category : 'NewTools-WelcomeBrowser',
-	#package : 'NewTools-WelcomeBrowser'
+	#category : 'NewTools-WelcomeBrowser-Themes',
+	#package : 'NewTools-WelcomeBrowser',
+	#tag : 'Themes'
 }
 
 { #category : 'private' }

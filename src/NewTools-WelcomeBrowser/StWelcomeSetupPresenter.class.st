@@ -11,8 +11,9 @@ Class {
 		'settingsHelpLabel',
 		'settingsButton'
 	],
-	#category : 'NewTools-WelcomeBrowser',
-	#package : 'NewTools-WelcomeBrowser'
+	#category : 'NewTools-WelcomeBrowser-Presenters',
+	#package : 'NewTools-WelcomeBrowser',
+	#tag : 'Presenters'
 }
 
 { #category : 'layout' }

@@ -4,8 +4,9 @@ A style contributor with welcome browser specifics
 Class {
 	#name : 'StWelcomeStyleContributor',
 	#superclass : 'StPharoStyleContributor',
-	#category : 'NewTools-WelcomeBrowser',
-	#package : 'NewTools-WelcomeBrowser'
+	#category : 'NewTools-WelcomeBrowser-Styles',
+	#package : 'NewTools-WelcomeBrowser',
+	#tag : 'Styles'
 }
 
 { #category : 'styles' }

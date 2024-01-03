@@ -4,8 +4,9 @@ A topic that will include microdown text.
 Class {
 	#name : 'StWelcomeTopicMicrodownPresenter',
 	#superclass : 'StWelcomeTopicPresenter',
-	#category : 'NewTools-WelcomeBrowser',
-	#package : 'NewTools-WelcomeBrowser'
+	#category : 'NewTools-WelcomeBrowser-Presenters',
+	#package : 'NewTools-WelcomeBrowser',
+	#tag : 'Presenters'
 }
 
 { #category : 'accessing' }

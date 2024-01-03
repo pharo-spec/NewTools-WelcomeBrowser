@@ -160,7 +160,7 @@ A compendium of Pharo documentation can be found at:
 
 There you can find:
 - Pharo books: [http://books.pharo.org](http://books.pharo.org)
-- Screencasts: [https://www.youtube.com/channel/UCp3mNigANqkesFzdm058bvw](https://www.youtube.com/channel/UCp3mNigANqkesFzdm058bvw)
+- Screencasts: [https://www.youtube.com/@Pharo-projectOrg](https://www.youtube.com/@Pharo-projectOrg)
 - Presentations: [http://www.slideshare.net/pharoproject/](http://www.slideshare.net/pharoproject/)
 
 ### Conferences

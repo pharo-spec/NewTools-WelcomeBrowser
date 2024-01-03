@@ -132,49 +132,7 @@ StWelcomeBrowser >> defaultLayout [
 { #category : 'accessing - contents' }
 StWelcomeBrowser >> helpContent [
 
-	^ '# Learn Pharo
-  
-### Getting help
-
-Pharo has a vibrant community that shares knowledge in different ways: 
-
-- The Pharo Users mailing list: [https://lists.pharo.org/list/pharo-users.lists.pharo.org](https://lists.pharo.org/list/pharo-users.lists.pharo.org)
-- The Pharo Discord server: [https://discord.gg/QewZMZa](https://discord.gg/QewZMZa)
-
-You can find more information, lists to browse/suscribe and places to share code at: 
-
-[http://pharo.org/community](http://pharo.org/community)
-
-### Using ProfStef
-You can learn Pharo by clicking on the following expression: 
-
-```pharoeval
-ProfStef go.
-```
-  
-### Follow the MOOC
-
-Pharo has an excellent MOOC (Massive Open Online Course). You can find more information here: 
-
-[http://mooc.pharo.org](http://mooc.pharo.org)
-
-Check the testimonies: they are great and fun. 
-
-### Books
-
-There are several free Pharo books that can be download here: 
-
-[http://books.pharo.org](http://books.pharo.org)
-
-A very interesting starting point would be looking into the "Updated Pharo by Example" free book. It is based on Pharo 90, but most .  
-You can find the book here:
-
-- [https://github.com/SquareBracketAssociates/UpdatedPharoByExample](https://github.com/SquareBracketAssociates/UpdatedPharoByExample)
-- [https://github.com/SquareBracketAssociates/PharoByExample9](https://github.com/SquareBracketAssociates/PharoByExample9)
-or order your copy here:
-- [Pharo 9 by example on Amazon](https://www.amazon.com/Pharo-example-Technology-Collection/dp/2322394106/)
-
-### Help
+	^ '### Help
 
 A compendium of Pharo documentation can be found at: 
 
@@ -220,6 +178,31 @@ StWelcomeBrowser >> initializeWindow: aWindowPresenter [
 		centered
 ]
 
+{ #category : 'accessing - contents' }
+StWelcomeBrowser >> learnContent [
+
+	^ '# Learn Pharo
+  
+### Getting help
+
+Pharo has a vibrant community that shares knowledge in different ways: 
+
+- The Pharo Users mailing list: [https://lists.pharo.org/list/pharo-users.lists.pharo.org](https://lists.pharo.org/list/pharo-users.lists.pharo.org)
+- The Pharo Discord server: [https://discord.gg/QewZMZa](https://discord.gg/QewZMZa)
+
+You can find more information, lists to browse/suscribe and places to share code at: 
+
+[http://pharo.org/community](http://pharo.org/community)
+
+### Using ProfStef
+You can learn Pharo by clicking on the following expression: 
+
+```pharoeval
+ProfStef go.
+```
+'
+]
+
 { #category : 'private' }
 StWelcomeBrowser >> newContainerTopic [ 
 
@@ -256,6 +239,32 @@ StWelcomeBrowser >> newTopicTitle: aTitle presenterClass: aClass [
 		title: aTitle;
 		contentPresenter: aClass new;
 		yourself
+]
+
+{ #category : 'accessing - contents' }
+StWelcomeBrowser >> resourceContent [
+
+	^ '### Follow the MOOC
+
+Pharo has an excellent MOOC (Massive Open Online Course). You can find more information here: 
+
+[http://mooc.pharo.org](http://mooc.pharo.org)
+
+Check the testimonies: they are great and fun. 
+
+### Books
+
+There are several free Pharo books that can be download here: 
+
+[http://books.pharo.org](http://books.pharo.org)
+
+A very interesting starting point would be looking into the "Updated Pharo by Example" free book. It is based on Pharo 90, but most .  
+You can find the book here:
+
+- [https://github.com/SquareBracketAssociates/UpdatedPharoByExample](https://github.com/SquareBracketAssociates/UpdatedPharoByExample)
+- [https://github.com/SquareBracketAssociates/PharoByExample9](https://github.com/SquareBracketAssociates/PharoByExample9)
+or order your copy here:
+- [Pharo 9 by example on Amazon](https://www.amazon.com/Pharo-example-Technology-Collection/dp/2322394106/)'
 ]
 
 { #category : 'private' }
@@ -307,6 +316,8 @@ StWelcomeBrowser >> topics [
 	self newTopicTitle: self welcomeLabel contents: self welcomeContent.
 	self newTopicTitle: self helpLabel presenterClass: StWelcomeSetupPresenter.
 	"self newTopicTitle: self setupLabel contents: self setupContent."
+	self newTopicTitle: self helpLabel contents: self learnContent.
+	self newTopicTitle: self helpLabel contents: self resourceContent.  	
 	self newTopicTitle: self helpLabel contents: self helpContent. 
 	self newTopicTitle: self changesLabel contents: self changesContent. 
 	}

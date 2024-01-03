@@ -103,7 +103,7 @@ Current Pharo development status:
 
 ## Changelog
 
-The complete list of changes can be viewed on a weekly basis [here](https://github.com/pharo-project/pharo-changelogs/tree/master/weekly).'
+The complete list of changes can be viewed on a weekly basis [here](https://github.com/pharo-project/pharo-changelogs).'
 ]
 
 { #category : 'accessing - labels' }

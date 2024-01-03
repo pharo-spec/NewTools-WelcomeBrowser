@@ -161,7 +161,20 @@ A compendium of Pharo documentation can be found at:
 There you can find:
 - Pharo books: [http://books.pharo.org](http://books.pharo.org)
 - Screencasts: [https://www.youtube.com/channel/UCp3mNigANqkesFzdm058bvw](https://www.youtube.com/channel/UCp3mNigANqkesFzdm058bvw)
-- Presentations: [http://www.slideshare.net/pharoproject/](http://www.slideshare.net/pharoproject/)'
+- Presentations: [http://www.slideshare.net/pharoproject/](http://www.slideshare.net/pharoproject/)
+
+### Conferences
+Conferences are unique event where you can meet other Pharoers and Smalltalkers, discover latest advances, and share your experience.
+
+- [Pharo days](https://days.pharo.org)
+- [ESUG Website](https://esug.github.io)
+- [ESUG - Video channel](https://www.youtube.com/@esugboard)
+- [FAST Foundation](https://www.fast.org.ar)
+- [FAST - Video channel](https://www.youtube.com/@FASTFoundation)
+- [FAST - Smalltalks 2022](https://smalltalks2022.fast.org.ar/)
+- [FAST - Smalltalks 2023](https://smalltalks2023.fast.org.ar/)
+- [FAST - Smalltalks 2024](https://smalltalks2024.fast.org.ar/) (soon)
+'
 ]
 
 { #category : 'accessing - labels' }

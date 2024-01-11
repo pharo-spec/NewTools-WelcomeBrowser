@@ -56,7 +56,7 @@ StWelcomeSetupPresenter >> initializePresenters [
 	
 	fullscreenCheckbox := self newCheckBox 
 		label: 'Toggle fullscreen mode';
-		state: Display isFullscreen;
+		state: WorldMorph isFullscreen;
 		whenChangedDo: [ :aBoolean | self toggleFullScreen: aBoolean ].
 	
 	settingsHelpLabel := self newLabel label: self settingsContent.
@@ -136,5 +136,5 @@ StWelcomeSetupPresenter >> settingsContent [
 { #category : 'private' }
 StWelcomeSetupPresenter >> toggleFullScreen: aBoolean [
 
-	Display fullscreen: aBoolean
+	WorldMorph fullscreen: aBoolean
 ]

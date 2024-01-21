@@ -36,7 +36,7 @@ BaselineOfWelcomeBrowser >> microdown: spec [
 			loads: #('RichText') ]
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'private' }
 BaselineOfWelcomeBrowser >> packageRepository [
 	" Tries to determine a repository from which the baseline is being loaded. Useful for 
 	refering other baselines in the same repository. "
@@ -50,7 +50,7 @@ BaselineOfWelcomeBrowser >> packageRepository [
 		  ifEmpty: [ nil ]
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'private' }
 BaselineOfWelcomeBrowser >> repositoryLocation [
 	| locationFromIceberg |
 

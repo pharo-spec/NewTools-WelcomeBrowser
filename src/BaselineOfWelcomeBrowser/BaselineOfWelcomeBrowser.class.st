@@ -1,8 +1,12 @@
+"
+Baseline for [https://github.com/pharo-spec/NewTools-WelcomeBrowser](https://github.com/pharo-spec/NewTools-WelcomeBrowser)
+"
 Class {
 	#name : 'BaselineOfWelcomeBrowser',
 	#superclass : 'BaselineOf',
-	#category : 'BaselineOfWelcomeBrowser',
-	#package : 'BaselineOfWelcomeBrowser'
+	#category : 'BaselineOfWelcomeBrowser-Base',
+	#package : 'BaselineOfWelcomeBrowser',
+	#tag : 'Base'
 }
 
 { #category : 'baselines' }
@@ -52,16 +56,18 @@ BaselineOfWelcomeBrowser >> packageRepository [
 
 { #category : 'private' }
 BaselineOfWelcomeBrowser >> repositoryLocation [
-	| locationFromIceberg |
 
-	locationFromIceberg := (self class environment classNamed: #IceRepository)
-		ifNotNil: [ :iceberg |
-			iceberg registry 
-				detect: [ :each | each name = self repositoryName ]
-				ifNone: [ nil ] ].
+	| locationFromIceberg repo |
+	repo := (self class environment classNamed: #IceRepository)
+		        ifNotNil: [ :iceberg |
+			        iceberg registry
+				        detect: [ :each | each name = self repositoryName ]
+				        ifNone: [ nil ] ].
+	
+	repo ifNotNil: [ locationFromIceberg := repo repositoryDirectory ].
 
-	^ locationFromIceberg
-		ifNil: [ self packageRepository directory asFileReference parent ] 
+	^ locationFromIceberg ifNil: [
+		  self packageRepository directory asFileReference parent ]
 ]
 
 { #category : 'private' }

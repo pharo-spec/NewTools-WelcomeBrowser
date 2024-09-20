@@ -29,7 +29,7 @@ StWelcomeBrowser class >> menuCommandOn: aBuilder [
 		parent: #PharoHelp;
 		order: 1;
 		action: [ self open ];
-		icon: ((self iconNamed: #pharo) scaledToSize: (16@16) scaledByDisplayScaleFactor);
+		iconName: #smallPharo;
 		help: 'Welcome window for Pharo'
 ]
 
@@ -58,7 +58,7 @@ StWelcomeBrowser class >> openForRelease [
 { #category : 'accessing' }
 StWelcomeBrowser class >> windowExtent [
 
-	^ (700@550) scaledByDisplayScaleFactor
+	^ (720@550) scaledByDisplayScaleFactor
 ]
 
 { #category : 'private' }

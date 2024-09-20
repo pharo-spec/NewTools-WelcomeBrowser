@@ -18,13 +18,19 @@ Class {
 { #category : 'accessing' }
 StWelcomeTheme class >> all [
 
-	^ { self light. self dark }
+	^ { self darkBlue. self light. self dark }
 ]
 
 { #category : 'accessing' }
 StWelcomeTheme class >> dark [
 
 	^ StWelcomeDarkTheme uniqueInstance
+]
+
+{ #category : 'accessing' }
+StWelcomeTheme class >> darkBlue [
+
+	^ StWelcomeDarkBlueTheme uniqueInstance
 ]
 
 { #category : 'accessing' }

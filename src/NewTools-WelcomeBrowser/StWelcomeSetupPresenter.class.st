@@ -26,6 +26,7 @@ StWelcomeSetupPresenter >> defaultLayout [
 			newBox: 'Theme' 
 			with: (SpBoxLayout newLeftToRight 
 				spacing: 10;
+				add: darkBlueThemePresenter;
 				add: lightThemePresenter;
 				add: darkThemePresenter;
 				yourself));
@@ -121,6 +122,7 @@ StWelcomeSetupPresenter >> openSettingsBrowser [
 { #category : 'private' }
 StWelcomeSetupPresenter >> selectTheme: aTheme [
 
+	darkBlueThemePresenter removeStyle: 'welcomeThemeSelected'.
 	lightThemePresenter removeStyle: 'welcomeThemeSelected'.
 	darkThemePresenter removeStyle: 'welcomeThemeSelected'.
 
